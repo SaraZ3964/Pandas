@@ -140,7 +140,3 @@ most_profitable = most_popular_items.sort_values(["Total Purchase Value"], ascen
 
 most_profitable.style.format({"Item Price":"${:,.2f}",
                               "Total Purchase Value":"${:,.2f}"})
-
-
-                              
-                              
