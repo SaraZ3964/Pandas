@@ -120,15 +120,15 @@ final_spenders.style.format({"Average Purchase Price":"${:,.2f}",
 #Item ID, Item Name, Purchase Count, Item Price, Total Purchase Value
 items = data_df[["Item ID", "Item Name", "Price"]]
 
-items_item = items.groupby(["Item ID","Item Name"])
+items_item = items.groupby (["Item ID","Item Name"])
 
-items_count = items["Price"].count()
-items_value = (items["Price"].sum())
+items_count = items_item["Price"].count()
+items_value = items_item["Price"].sum()
 items_price = items_value / items_count
 
 most_popular_items = pd.DataFrame({"Purchase Count": items_count, 
                                    "Item Price": items_price,
-                                   "Total Purchase Value":items_value})
+                                   "Total Purchase Value": items_value})
 
 final_most_popular = most_popular_items.sort_values(["Purchase Count"], ascending=False).head()
 
